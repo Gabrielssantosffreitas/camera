@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camera</title>
+</head>
+<body>
+    <video id="video" autoplay></video>
+    <script>
+       function star ( ){ 
+        navigator.mediaDevices.getUserMedia({video:true}).then(video => { 
+            const elementoVideo = document.querySelector("#video")
+            elementoVideo.srcObject = video
+        }).catch(error=>{console.log(error)})
+
+       }
+
+       window.addEventListener("DOMContentLoaded",star)
+    </script>
+</body>
+</html>
